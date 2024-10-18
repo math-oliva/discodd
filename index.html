@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Discos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo à Loja de Discos!</h1>
+        <nav>
+            <ul>
+                <li><a href="add-product.html">Adicionar Disco</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="products">
+            <h2>Discos Disponíveis</h2>
+            <div id="product-list"></div>
+            <div id="pagination">
+                <button id="prev-button" onclick="changePage(-1)">Anterior</button>
+                <button id="next-button" onclick="changePage(1)">Próximo</button>
+            </div>
+        </section>
+
+        <section id="cart">
+            <h2>Carrinho de Compras</h2>
+            <div id="cart-items"></div>
+            <p id="total-price">Total: R$ 0,00</p>
+            <button id="checkout-button">Finalizar Compra</button>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>Contato</h2>
+        <p>Email: contato@lojadediscos.com</p>
+        <p>Telefone: (11) 1234-5678</p>
+        <p>&copy; 2024 Loja de Discos. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

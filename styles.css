@@ -1,0 +1,102 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #007bff;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+#products {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#cart {
+    margin: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#cart-items {
+    margin-bottom: 10px;
+}
+
+.cart-item {
+    margin-bottom: 5px;
+}
+
+#product-list {
+    display: grid; /* Utiliza Grid Layout */
+    grid-template-columns: repeat(4, 1fr); /* Define 4 colunas iguais */
+    gap: 20px; /* Espaço entre os itens */
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background: white;
+}
+
+.product-item img {
+    width: 100%; /* Ajusta a imagem para a largura do contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 5px; /* Adiciona bordas arredondadas à imagem */
+}
+
+.product-item h3 {
+    font-size: 1.2em;
+}
+
+.product-item p {
+    margin: 5px 0;
+}
+
+.product-item button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.product-item button:hover {
+    background-color: #218838;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    margin-top: 20px;
+}
