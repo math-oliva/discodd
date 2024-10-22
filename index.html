@@ -41,7 +41,32 @@
         <p>Telefone: (11) 1234-5678</p>
         <p>&copy; 2024 Loja de Discos. Todos os direitos reservados.</p>
     </footer>
-    
+
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button" onclick="closeModal()">&times;</span>
+            <h2>Cadastro de Cliente</h2>
+            <form id="signup-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+                
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required>
+                
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" required>
+                
+                <label for="address">Endereço:</label>
+                <input type="text" id="address" required>
+                
+                <label for="bank">Dados Bancários:</label>
+                <input type="text" id="bank" required placeholder="Banco, Agência, Conta">
+                
+                <button type="submit">Finalizar Compra</button>
+            </form>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
