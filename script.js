@@ -1,6 +1,3 @@
-// script.js
-
-// Lista de produtos pré-definidos com imagens
 const products = [
     { name: "Disco 1", artist: "Artista 1", price: 50.00, image: "images/disco1.jpg" },
     { name: "Disco 2", artist: "Artista 2", price: 40.00, image: "images/disco2.jpg" },
@@ -18,13 +15,12 @@ const products = [
 
 let cart = [];
 let currentPage = 0;
-const itemsPerPage = 4; // Número de produtos por página
+const itemsPerPage = 4;
 
 function displayProducts() {
     const productList = document.getElementById('product-list');
-    productList.innerHTML = ''; // Limpa a lista de produtos
+    productList.innerHTML = '';
 
-    // Calcular o índice inicial e final dos produtos a serem exibidos
     const startIndex = currentPage * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
     const productsToDisplay = products.slice(startIndex, endIndex);
@@ -41,8 +37,7 @@ function displayProducts() {
         `;
         productList.appendChild(productItem);
     });
-    
-    // Habilitar/desabilitar botões de navegação
+
     document.getElementById('prev-button').disabled = currentPage === 0;
     document.getElementById('next-button').disabled = endIndex >= products.length;
 }
@@ -69,9 +64,7 @@ function updateCart() {
     cart.forEach(item => {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
-        cartItem.innerHTML = `
-            <p>${item.name} - R$ ${item.price.toFixed(2)}</p>
-        `;
+        cartItem.innerHTML = `<p>${item.name} - R$ ${item.price.toFixed(2)}</p>`;
         cartItems.appendChild(cartItem);
         total += item.price;
     });
@@ -79,5 +72,32 @@ function updateCart() {
     document.getElementById('total-price').innerText = `Total: R$ ${total.toFixed(2)}`;
 }
 
-// Inicializa a exibição dos produtos ao carregar a página
+const modal = document.getElementById("signup-modal");
+
+document.getElementById("checkout-button").onclick = function() {
+    modal.style.display = "block";
+};
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+document.querySelector(".close-button").onclick = closeModal;
+
+document.getElementById("signup-form").onsubmit = function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+    const address = document.getElementById("address").value;
+    const bank = document.getElementById("bank").value;
+
+    alert(`Compra Finalizada!\n\nNome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nEndereço: ${address}\nDados Bancários: ${bank}`);
+    
+    cart = [];
+    updateCart();
+    closeModal();
+};
+
 document.addEventListener('DOMContentLoaded', displayProducts);
